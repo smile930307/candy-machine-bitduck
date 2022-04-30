@@ -181,6 +181,7 @@ button {
 
 img {
   border-radius: 24px;
+  margin: auto;
 }
 
 .MuiDialog-paper {

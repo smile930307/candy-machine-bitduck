@@ -421,8 +421,9 @@ const Home = (props: HomeProps) => {
                   speed={500}
                   slidesToShow={3}
                   slidesToScroll={1}>
-                  <div className="mx-auto row-centered">
+                  <div >
                     <img
+                      className='mx-auto'
                       loading="lazy"
                       width="350"
                       height="442"
@@ -430,8 +431,9 @@ const Home = (props: HomeProps) => {
                       alt="dev"
                     />
                   </div>
-                  <div className="mx-auto row-centered">
+                  <div >
                     <img
+                      className='mx-auto'
                       loading="lazy"
                       width="350"
                       height="442"
@@ -439,8 +441,9 @@ const Home = (props: HomeProps) => {
                       alt="dev"
                     />
                   </div>
-                  <div className="mx-auto row-centered">
+                  <div >
                     <img
+                      className='mx-auto'
                       loading="lazy"
                       width="350"
                       height="442"
@@ -448,8 +451,9 @@ const Home = (props: HomeProps) => {
                       alt="dev"
                     />
                   </div>
-                  <div className="mx-auto row-centered">
+                  <div >
                     <img
+                      className='mx-auto'
                       loading="lazy"
                       width="350"
                       height="442"
@@ -457,8 +461,9 @@ const Home = (props: HomeProps) => {
                       alt="dev"
                     />
                   </div>
-                  <div className="mx-auto row-centered">
+                  <div >
                     <img
+                      className='mx-auto'
                       loading="lazy"
                       width="350"
                       height="442"
@@ -466,8 +471,9 @@ const Home = (props: HomeProps) => {
                       alt="dev"
                     />
                   </div>
-                  <div className="mx-auto row-centered">
+                  <div >
                     <img
+                      className='mx-auto'
                       loading="lazy"
                       width="350"
                       height="442"
@@ -478,7 +484,6 @@ const Home = (props: HomeProps) => {
                 </Slider>
                 </div>
               </div>
-             
             </div>
           </Container>
         </section>
