@@ -20,6 +20,10 @@ import {
 import { WalletDialogProvider } from '@solana/wallet-adapter-material-ui';
 
 import { ThemeProvider, createTheme } from '@material-ui/core';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const theme = createTheme({
   palette: {
@@ -66,12 +70,27 @@ const App = () => {
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={wallets} autoConnect>
           <WalletDialogProvider>
-            <Home
-              candyMachineId={candyMachineId}
-              connection={connection}
-              txTimeout={DEFAULT_TIMEOUT}
-              rpcHost={rpcHost}
-            />
+            <Header></Header>
+            <BrowserRouter>
+            <Routes>
+              <Route path='/' 
+                element={
+                  <Home
+                    candyMachineId={candyMachineId}
+                    connection={connection}
+                    txTimeout={DEFAULT_TIMEOUT}
+                    rpcHost={rpcHost}
+                  />
+                }> 
+              </Route>
+              <Route path='/nfts' 
+                element={
+                  <>ddd</>
+                }> 
+              </Route>
+            </Routes>
+            </BrowserRouter>
+            <Footer />
           </WalletDialogProvider>
         </WalletProvider>
       </ConnectionProvider>
