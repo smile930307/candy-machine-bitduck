@@ -24,6 +24,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import MyNFT from './components/MyNFT';
 
 const theme = createTheme({
   palette: {
@@ -70,8 +71,9 @@ const App = () => {
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={wallets} autoConnect>
           <WalletDialogProvider>
-            <Header></Header>
+            
             <BrowserRouter>
+            <Header></Header>
             <Routes>
               <Route path='/' 
                 element={
@@ -85,7 +87,7 @@ const App = () => {
               </Route>
               <Route path='/nfts' 
                 element={
-                  <>ddd</>
+                  <MyNFT></MyNFT>
                 }> 
               </Route>
             </Routes>

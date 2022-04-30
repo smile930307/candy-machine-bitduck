@@ -10,6 +10,7 @@ import { BsTwitter, BsDiscord } from "react-icons/bs";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import image from "../assets/images/logo.png";
 import { useState } from "react";
+import { Link } from "react-router-dom"
 
 const Header = () => {
 
@@ -28,7 +29,7 @@ const Header = () => {
       <Navbar id="navbar" expand="lg">
         <Container>
           <Navbar.Brand
-            href="#home"
+            href="/"
             className="site-logo navbar-brand"
             title="back to index"
           >
@@ -50,13 +51,11 @@ const Header = () => {
               >
                 <Dropdown.Item href="#mint">Mint</Dropdown.Item>
                 <Dropdown.Item href="#faq">FAQ</Dropdown.Item>
-                <Dropdown.Item href="#roadmap">Roadmap</Dropdown.Item>
               </DropdownButton>
               <DropdownButton
                 id="navbarDropdownSocialMedia"
                 title="Social Media"
                 className="nav-link"
-                
               >
                 <Dropdown.Item
                   href="https://twitter.com/SQUID7777NFT"
@@ -75,13 +74,15 @@ const Header = () => {
                   Discord
                 </Dropdown.Item>
               </DropdownButton>
+                
               <Nav.Item className="nav-link">
-                <Button
-                  role="button"
-                  aria-expanded="false"
-                >
-                  My NFT
-                </Button>
+                <Link to="/nfts">
+                  <Button
+                    role="button"
+                    aria-expanded="false">
+                    My NFT
+                  </Button>
+                </Link>
               </Nav.Item>
               <Nav.Item className="nav-link">
                 <WalletMultiButton />
