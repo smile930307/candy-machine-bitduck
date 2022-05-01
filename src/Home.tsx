@@ -388,7 +388,7 @@ const Home = (props: HomeProps) => {
       <section id="home">
         <Container>
           <div className="row">
-            <div className="col-md-12 col-sm-12 col-xs-12 mx-auto">
+          <div className="col-md-12 col-sm-12 col-xs-12 mx-auto">
               <div className="row row-centered">
                 {/* <div className="col-sm mx-auto">
                     <Image
@@ -404,123 +404,8 @@ const Home = (props: HomeProps) => {
                   collection.
                 </h1>
               </div>
-              <div className="col-md-12 col-sm-12 col-xs-12 mx-auto">
-                <Slider
-                  dots={true}
-                  infinite={true}
-                  // nextArrow={<CustomArrow type={'next'}/>}
-                  // prevArrow={<CustomArrow type={'prev'} />}
-                  autoplay={true}
-                  speed={500}
-                  slidesToShow={3}
-                  slidesToScroll={1}
-                  responsive={[
-                    {
-                      breakpoint: 1200,
-                      settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                      },
-                    },
-                    {
-                      breakpoint: 1024,
-                      settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                      },
-                    },
-                    {
-                      breakpoint: 768,
-                      settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                      },
-                    },
-                  ]}
-                >
-                  <div className="text-center">
-                  <div className="glow-on-hover-img">
-                    <img
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/0.png"
-                      alt="dev"
-                    />
-                  </div>
-                  </div>
-                  <div className="text-center">
-                  <div className="glow-on-hover-img">
-                    <img
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/1.png"
-                      alt="dev"
-                    />
-                  </div>
-                  </div>
-                  <div className="text-center">
-                  <div className="glow-on-hover-img">
-                    <img
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/2.png"
-                      alt="dev"
-                    />
-                  </div>
-                  </div>
-                  <div className="text-center">
-                  <div className="glow-on-hover-img">
-                    <img
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/3.png"
-                      alt="dev"
-                    />
-                  </div>
-                  </div>
-                  <div className="text-center">
-                  <div className="glow-on-hover-img">
-                    <img
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/4.png"
-                      alt="dev"
-                    />
-                  </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="glow-on-hover-img">
-                    <img
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/5.png"
-                      alt="dev"
-                    />
-                    </div>
-                  </div>
-                </Slider>
-              </div>
             </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* <Parallax blur={0} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
-        <div className="pharalex-text"> 
-          Lorem ipsum dolor sit amet
-        </div>
-      </Parallax> */}
-
-      <section id="mint">
-        <Container>
-          <div className="row">
-            <div className="col-md-12 col-sm-12 col-xs-12 mx-auto">
+            <div className="col-md-12 col-sm-12 col-xs-12 mx-auto mt-30">
               <div className="row">
                 <div className="col-sm mx-auto">
                   <h3 className="animated-gradient-text2">OUR STORY</h3>
@@ -794,6 +679,123 @@ const Home = (props: HomeProps) => {
                   </div>
                   <br />
                 </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* <Parallax blur={0} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
+        <div className="pharalex-text"> 
+          Lorem ipsum dolor sit amet
+        </div>
+      </Parallax> */}
+  
+      <section id="mint">
+        <Container>
+          <div className="row">
+            <div className="col-md-12 col-sm-12 col-xs-12 mx-auto">
+              <div className="col-md-12 col-sm-12 col-xs-12 mx-auto">
+                <Slider
+                  dots={true}
+                  infinite={true}
+                  // nextArrow={<CustomArrow type={'next'}/>}
+                  // prevArrow={<CustomArrow type={'prev'} />}
+                  autoplay={true}
+                  speed={500}
+                  slidesToShow={3}
+                  slidesToScroll={1}
+                  responsive={[
+                    {
+                      breakpoint: 1200,
+                      settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                      },
+                    },
+                    {
+                      breakpoint: 1024,
+                      settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                      },
+                    },
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                      },
+                    },
+                  ]}
+                >
+                  <div className="text-center">
+                  <div className="glow-on-hover-img">
+                    <img
+                      loading="lazy"
+                      width="350"
+                      height="350"
+                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/0.png"
+                      alt="dev"
+                    />
+                  </div>
+                  </div>
+                  <div className="text-center">
+                  <div className="glow-on-hover-img">
+                    <img
+                      loading="lazy"
+                      width="350"
+                      height="350"
+                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/1.png"
+                      alt="dev"
+                    />
+                  </div>
+                  </div>
+                  <div className="text-center">
+                  <div className="glow-on-hover-img">
+                    <img
+                      loading="lazy"
+                      width="350"
+                      height="350"
+                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/2.png"
+                      alt="dev"
+                    />
+                  </div>
+                  </div>
+                  <div className="text-center">
+                  <div className="glow-on-hover-img">
+                    <img
+                      loading="lazy"
+                      width="350"
+                      height="350"
+                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/3.png"
+                      alt="dev"
+                    />
+                  </div>
+                  </div>
+                  <div className="text-center">
+                  <div className="glow-on-hover-img">
+                    <img
+                      loading="lazy"
+                      width="350"
+                      height="350"
+                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/4.png"
+                      alt="dev"
+                    />
+                  </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="glow-on-hover-img">
+                    <img
+                      loading="lazy"
+                      width="350"
+                      height="350"
+                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/5.png"
+                      alt="dev"
+                    />
+                    </div>
+                  </div>
+                </Slider>
               </div>
             </div>
           </div>

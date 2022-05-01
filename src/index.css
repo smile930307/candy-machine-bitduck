@@ -26,7 +26,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1b1b1b !important;
+  background: linear-gradient(89deg, #0009B3 -7.08%, #000CFF 108.95%) !important;
   overflow-x: hidden;
 }
 
@@ -170,7 +170,7 @@ section {
 
 h1 {
   font-family: "quantico-bold", sans-serif;
-  color: #14149f;
+  color: #FFCE00;
   text-align: center;
 }
 
@@ -212,12 +212,12 @@ p {
   font-weight: 800;
   outline: none;
   text-transform: uppercase;
-  color: #14149f;
+  color: #FFCE00;
   text-align: center;
 }
 
 footer .animated-gradient-text2 {
-  color: #1b1b1b;
+  color: white;
 }
 
 ul ul,
@@ -476,12 +476,14 @@ section#mint {
 
 .wallet-adapter-button-trigger,
 .wallet-adapter-button-trigger:hover {
-  background: linear-gradient(
+  /* background: linear-gradient(
     85.69deg,
     #ee0edd -7.78%,
     #97078c 108.47%
-  ) !important;
+  ) !important; */
+  background: #FFCE00 !important;
   border-radius: 14px !important;
+  color: black;
 }
 
 @keyframes spin {
@@ -517,7 +519,8 @@ section#mint {
 }
 .bg-gradient1 {
   /* background: linear-gradient(89.15deg, #d7fdb6 -10.08%, #84f91f 103.41%); */
-  background: linear-gradient(90.82deg, #5C95FF 2.76%, #007CBE 105.28%);
+  /* background: linear-gradient(90.82deg, #5C95FF 2.76%, #007CBE 105.28%); */
+  background: #000;
 }
 .bg-gradient2 {
   background: rgb(0, 0, 0);
@@ -562,8 +565,8 @@ section#collection {
 
 .navbar {
   width: 100%;
-  background: transparent;
-  background: linear-gradient(90.82deg, #5C95FF 2.76%, #007CBE 105.28%);
+  background: black;
+  /* background: linear-gradient(90.82deg, #5C95FF 2.76%, #007CBE 105.28%); */
   padding: 0;
 }
 
@@ -1274,6 +1277,14 @@ a {
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
+}
+
+.mt-20{
+  margin-top: 20px;
+}
+
+.mt-30{
+  margin-top: 30px;
 }
 
 .member-name{
