@@ -1,6 +1,4 @@
 const Team = () => {
-  const year = new Date().getFullYear();
-
   return (
       <div className="container text-center mb-5">
         <div className="col-md-12 col-sm-12 col-xs-12 medium-padding50">
