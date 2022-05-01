@@ -499,6 +499,13 @@ section#mint {
 .text-center {
   text-align: center;
 }
+
+.text-flex {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
 #about p {
   color: silver !important;
 }

@@ -510,6 +510,14 @@ const Home = (props: HomeProps) => {
         </Container>
       </section>
 
+      <Parallax blur={0} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
+        <section >
+          <Container className="text-flex">
+            like this
+          </Container>
+        </section>
+      </Parallax>
+
       <section id="mint">
         <Container>
           <div className="row">
@@ -792,21 +800,20 @@ const Home = (props: HomeProps) => {
           </div>
         </Container>
       </section>
-      <div className="row separator">
-        <div className="col-md-12 col-sm-12 col-xs-12 mx-auto">
-          <div className="row row-centered">
-            <div className="col-sm mx-auto"></div>
-          </div>
-        </div>
-      </div>
           
       <Parallax blur={0} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
-        <section id="faq">
+      <section >
+          <Container className="text-flex">
+            like this
+          </Container>
+        </section>
+      </Parallax>
+
+      <section id="faq">
           <Container>
             <Faq />
           </Container>
         </section>
-      </Parallax>
     </>
   );
 };
