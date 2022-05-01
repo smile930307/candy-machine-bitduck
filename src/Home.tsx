@@ -537,7 +537,7 @@ const Home = (props: HomeProps) => {
                           src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/5.png"
                           alt="random nft"
                           width="350"
-                          height="442"
+                          height="350"
                         />
                       </div>
                       <input
