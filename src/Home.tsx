@@ -12,6 +12,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Parallax } from "react-parallax";
+import bgimg from "./assets/images/parallax.png"
 import {
   awaitTransactionSignatureConfirmation,
   CandyMachineAccount,
@@ -441,7 +442,7 @@ const Home = (props: HomeProps) => {
                     <img
                       loading="lazy"
                       width="350"
-                      height="442"
+                      height="350"
                       src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/0.png"
                       alt="dev"
                     />
@@ -452,7 +453,7 @@ const Home = (props: HomeProps) => {
                     <img
                       loading="lazy"
                       width="350"
-                      height="442"
+                      height="350"
                       src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/1.png"
                       alt="dev"
                     />
@@ -463,7 +464,7 @@ const Home = (props: HomeProps) => {
                     <img
                       loading="lazy"
                       width="350"
-                      height="442"
+                      height="350"
                       src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/2.png"
                       alt="dev"
                     />
@@ -474,7 +475,7 @@ const Home = (props: HomeProps) => {
                     <img
                       loading="lazy"
                       width="350"
-                      height="442"
+                      height="350"
                       src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/3.png"
                       alt="dev"
                     />
@@ -485,7 +486,7 @@ const Home = (props: HomeProps) => {
                     <img
                       loading="lazy"
                       width="350"
-                      height="442"
+                      height="350"
                       src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/4.png"
                       alt="dev"
                     />
@@ -496,7 +497,7 @@ const Home = (props: HomeProps) => {
                     <img
                       loading="lazy"
                       width="350"
-                      height="442"
+                      height="350"
                       src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/5.png"
                       alt="dev"
                     />
@@ -798,7 +799,8 @@ const Home = (props: HomeProps) => {
           </div>
         </div>
       </div>
-      <Parallax blur={0} bgImageAlt="the cat" strength={400}>
+          
+      <Parallax blur={0} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
         <section id="faq">
           <Container>
             <Faq />

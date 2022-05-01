@@ -1,5 +1,3 @@
-import React from "react";
-
 const Faq = () => {
 
   return (
@@ -15,7 +13,7 @@ const Faq = () => {
               <img
                 loading="lazy"
                 width="350"
-                height="442"
+                height="350"
                 src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/0.png"
                 alt="dev"
               />
@@ -39,7 +37,7 @@ const Faq = () => {
                 <img
                 loading="lazy"
                 width="350"
-                height="442"
+                height="350"
                 src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/1.png"
                 alt="dev"
               />
@@ -61,7 +59,7 @@ const Faq = () => {
               <img
                   loading="lazy"
                   width="350"
-                  height="442"
+                  height="350"
                   src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/1.png"
                   alt="dev"
                 />
@@ -74,7 +72,7 @@ const Faq = () => {
               <img
                   loading="lazy"
                   width="350"
-                  height="442"
+                  height="350"
                   src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/2.png"
                   alt="dev"
                 />
@@ -98,7 +96,7 @@ const Faq = () => {
               <img
                   loading="lazy"
                   width="350"
-                  height="442"
+                  height="350"
                   src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/4.png"
                   alt="dev"
                 />
@@ -120,7 +118,7 @@ const Faq = () => {
               <img
                 loading="lazy"
                 width="350"
-                height="442"
+                height="350"
                 src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/4.png"
                 alt="dev"
               />
