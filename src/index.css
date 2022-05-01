@@ -267,6 +267,10 @@ ul ol {
 
 /* Header CSS */
 
+#navbar {
+  height: 120px;
+}
+
 .header {
   position: fixed;
   width: 100%;

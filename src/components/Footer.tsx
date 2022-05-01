@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="col-lg-12 col-sm-12 col-xs-12 mb-5">
             <br />
             <br />
-            <h2 className="animated-gradient-text2">Project Aika</h2>
+            <h2 className="animated-gradient-text2">Project BitDuckz</h2>
             <br />
             <h3 className="animated-gradient-text2">
               © All right reserved {year}.
