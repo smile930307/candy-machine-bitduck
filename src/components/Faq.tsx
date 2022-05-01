@@ -10,7 +10,7 @@ const Faq = () => {
         </div>
 
         <div className="row align-center">
-          <div className="col-lg-6 col-sm-12 col-xs-12 text-center">
+          <div className="col-lg-6 col-sm-12 col-xs-12 text-center mb-20">
             <img
               loading="lazy"
               width="350"
@@ -32,6 +32,15 @@ const Faq = () => {
           </div>
         </div>
         <div className="row align-center">
+          <div className="col-lg-6 col-sm-12 col-xs-12 text-center mobile-only mb-20">
+            <img
+              loading="lazy"
+              width="350"
+              height="442"
+              src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/1.png"
+              alt="dev"
+            />
+          </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 mb-5">
             <h3>
               <b>Lorem ipsum dolor sit amet</b>
@@ -43,7 +52,7 @@ const Faq = () => {
               Suspendisse potenti.
             </p>
           </div>
-          <div className="col-lg-6 col-sm-12 col-xs-12 text-center">
+          <div className="col-lg-6 col-sm-12 col-xs-12 text-center pc-only">
             <img
               loading="lazy"
               width="350"
@@ -54,7 +63,7 @@ const Faq = () => {
           </div>
         </div>
         <div className="row align-center">
-          <div className="col-lg-6 col-sm-12 col-xs-12 text-center">
+          <div className="col-lg-6 col-sm-12 col-xs-12 text-center mb-20">
             <img
               loading="lazy"
               width="350"
@@ -76,6 +85,15 @@ const Faq = () => {
           </div>
         </div>
         <div className="row align-center">
+          <div className="col-lg-6 col-sm-12 col-xs-12 text-center mobile-only mb-20">
+              <img
+                loading="lazy"
+                width="350"
+                height="442"
+                src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/4.png"
+                alt="dev"
+              />
+          </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 mb-5">
             <h3>
               <b>Lorem ipsum dolor sit amet</b>
@@ -87,7 +105,7 @@ const Faq = () => {
               Suspendisse potenti.
             </p>
           </div>
-          <div className="col-lg-6 col-sm-12 col-xs-12 text-center">
+          <div className="col-lg-6 col-sm-12 col-xs-12 text-center pc-only">
             <img
               loading="lazy"
               width="350"

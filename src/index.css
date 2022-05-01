@@ -569,11 +569,12 @@ section#collection {
   color: #1b1b1b;
   font-family: "quantico-bold", sans-serif;
 }
-/* .wallet-adapter-button {
-  font-size: 20px;
+
+.wallet-adapter-button {
+  /* font-size: 20px; */
   line-height: 20px;
-  font-family: "quantico-bold", sans-serif;
-} */
+  /* font-family: "quantico-bold", sans-serif; */
+}
 
 /* centered columns styles */
 .row-centered {
@@ -1091,4 +1092,34 @@ a {
   to {
     transform: rotateY(360deg);
   }
+}
+
+.pc-only{
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .mobile-only{
+    display: block;
+  }
+
+  .pc-only{
+    display: none;
+  }
+
+  .mint-amount-input{
+    width: 100% !important;
+  }
+
+  section {
+    min-height: 0vh;
+  }
+}
+
+.mb-20{
+  margin-bottom: 20px !important;
 }
