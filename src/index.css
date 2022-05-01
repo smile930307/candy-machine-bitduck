@@ -569,11 +569,11 @@ section#collection {
   color: #1b1b1b;
   font-family: "quantico-bold", sans-serif;
 }
-.wallet-adapter-button {
+/* .wallet-adapter-button {
   font-size: 20px;
   line-height: 20px;
   font-family: "quantico-bold", sans-serif;
-}
+} */
 
 /* centered columns styles */
 .row-centered {

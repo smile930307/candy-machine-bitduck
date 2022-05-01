@@ -13,14 +13,29 @@ import {
 } from '@identity.com/solana-gateway-ts';
 
 export const CTAButton = styled(Button)`
-  width: 100%;
-  height: 60px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  background: linear-gradient(180deg, #604ae5 0%, #813eee 100%);
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
+
+	margin-top: 10px;
+	margin-bottom: 5px;
+	background: linear-gradient(180deg, #604ae5 0%, #813eee 100%);
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+
+	background: linear-gradient(85.69deg, #ee0edd -7.78%, #8c0782 108.47%);
+	border-radius: 14px;
+	-webkit-border-radius: 14px;
+	border: none;
+	color: #eeeeee;
+	cursor: pointer;
+	display: inline-block;
+	font-family: "PressStart2P-Regular", Fallback, sans-serif;
+	font-size: 35px;
+	padding: 1vh 2vw;
+	text-align: center;
+	text-decoration: none;
+	width: 269px;
+	height: 80px;
+	animation: glowing 1300ms infinite;
 `; // add your own styles here
 
 export const MintButton = ({

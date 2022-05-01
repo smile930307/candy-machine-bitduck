@@ -7,10 +7,12 @@ import {
   Nav,
 } from "react-bootstrap";
 import { BsTwitter, BsDiscord } from "react-icons/bs";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import image from "../assets/images/logo.png";
+import logo from "../assets/images/logo.png";
 import { useState } from "react";
 import { Link } from "react-router-dom"
+
+import '@solana/wallet-adapter-react-ui/styles.css';
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 const Header = () => {
 
@@ -37,7 +39,7 @@ const Header = () => {
               loading="lazy"
               width="300"
               height="120"
-              src={image}
+              src={logo}
               alt="brand logo"
             />
           </Navbar.Brand>
