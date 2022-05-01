@@ -799,7 +799,7 @@ const Home = (props: HomeProps) => {
         </Container>
       </section>
           
-      <Parallax blur={0} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
+      <Parallax blur={10} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
         <div className="pharalex-text"> 
           Lorem ipsum dolor sit amet
         </div>
