@@ -12,7 +12,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Parallax } from "react-parallax";
-import bgimg from "./assets/images/bg.png"
+import bgimg from "./assets/images/phara_bg.png"
 import {
   awaitTransactionSignatureConfirmation,
   CandyMachineAccount,
