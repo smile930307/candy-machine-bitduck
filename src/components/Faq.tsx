@@ -6,7 +6,7 @@ const Faq = () => {
     <div className="row">
       <div className="container">
         <div className="col-md-12 col-sm-12 col-xs-12 mb-4 medium-padding50">
-          <h1 className="animated-gradient-text2">F.A.Q.</h1>
+          <h1 className="animated-gradient-text2">Bit Ducks Collection</h1>
         </div>
 
         <div className="row align-center">

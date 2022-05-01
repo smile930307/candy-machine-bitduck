@@ -524,12 +524,6 @@ const Home = (props: HomeProps) => {
                     Ut vel nulla ut turpis sollicitudin pretium eget sit amet
                     metus. Aenean id efficitur justo, ac semper lorem.
                   </p>
-                  <p>
-                    Suspendisse potenti. Vivamus tortor purus, facilisis eget
-                    condimentum facilisis, aliquet vel libero. Cras eros tortor,
-                    rutrum in volutpat ac, gravida quis erat. In arcu ante,
-                    sodales id finibus id, ultricies eget tortor.
-                  </p>
                 </div>
                 <div className="col-sm mx-auto">
                   <div className="row row-centered">

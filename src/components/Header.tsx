@@ -46,14 +46,23 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="navbar-nav">
-              <DropdownButton
+              {/* <DropdownButton
                 className="nav-link"
                 id="navbarDropdownMenuNFT"
                 title="NFT"
               >
                 <Dropdown.Item href="#mint">Mint</Dropdown.Item>
                 <Dropdown.Item href="#faq">FAQ</Dropdown.Item>
-              </DropdownButton>
+              </DropdownButton> */}
+              <Nav.Item className="nav-link">
+                <Link to="/">
+                  <Button
+                    role="button"
+                    aria-expanded="false">
+                    Home
+                  </Button>
+                </Link>
+              </Nav.Item>              
               <DropdownButton
                 id="navbarDropdownSocialMedia"
                 title="Social Media"
@@ -77,7 +86,7 @@ const Header = () => {
                 </Dropdown.Item>
               </DropdownButton>
                 
-              <Nav.Item className="nav-link">
+              {/* <Nav.Item className="nav-link">
                 <Link to="/nfts">
                   <Button
                     role="button"
@@ -85,7 +94,7 @@ const Header = () => {
                     My NFT
                   </Button>
                 </Link>
-              </Nav.Item>
+              </Nav.Item> */}
               <Nav.Item className="nav-link">
                 <WalletMultiButton />
               </Nav.Item>
