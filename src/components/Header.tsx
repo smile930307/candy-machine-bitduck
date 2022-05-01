@@ -7,9 +7,10 @@ import {
   Nav,
 } from "react-bootstrap";
 import { BsTwitter, BsDiscord } from "react-icons/bs";
+import { Link } from "react-router-dom"
 import logo from "../assets/images/logo.png";
 import { useState } from "react";
-import { Link } from "react-router-dom"
+
 
 import '@solana/wallet-adapter-react-ui/styles.css';
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";

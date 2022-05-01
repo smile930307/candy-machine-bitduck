@@ -90,8 +90,8 @@ const App = () => {
                 }> 
               </Route>
             </Routes>
-            </BrowserRouter>
             <Footer />
+            </BrowserRouter>
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
