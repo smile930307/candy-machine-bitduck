@@ -30,6 +30,7 @@ import { GatewayProvider } from "@civic/solana-gateway-react";
 import { sendTransaction } from "./connection";
 import Faq from "./components/Faq";
 import styled from "styled-components";
+import Team from "./components/Team";
 
 const MintContainer = styled.div``; // add your owns styles here
 
@@ -510,11 +511,11 @@ const Home = (props: HomeProps) => {
         </Container>
       </section>
 
-      <Parallax blur={0} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
+      {/* <Parallax blur={0} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
         <div className="pharalex-text"> 
           Lorem ipsum dolor sit amet
         </div>
-      </Parallax>
+      </Parallax> */}
 
       <section id="mint">
         <Container>
@@ -806,10 +807,16 @@ const Home = (props: HomeProps) => {
       </Parallax>
 
       <section id="faq">
-          <Container>
-            <Faq />
-          </Container>
-        </section>
+        <Container>
+          <Faq />
+        </Container>
+      </section>
+
+      <section id="team">
+        <Container>
+          <Team />
+        </Container>
+      </section>
     </>
   );
 };
