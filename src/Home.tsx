@@ -22,7 +22,7 @@ import {
   SetupState,
   createAccountsForMint,
 } from "./candy-machine";
-import { AlertState, toDate, formatNumber, getAtaForMint } from "./utils";
+import { AlertState, toDate, formatNumber, getAtaForMint } from "./utilsweb";
 import { MintCountdown } from "./MintCountdown";
 import { MintButton } from "./MintButton";
 import { GatewayProvider } from "@civic/solana-gateway-react";
