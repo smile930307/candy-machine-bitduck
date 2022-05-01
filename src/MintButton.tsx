@@ -35,7 +35,6 @@ export const CTAButton = styled(Button)`
 	text-decoration: none;
 	width: 269px;
 	height: 80px;
-	animation: glowing 1300ms infinite;
 `; // add your own styles here
 
 export const MintButton = ({
@@ -112,7 +111,8 @@ export const MintButton = ({
   }, [setIsMinting, previousGatewayStatus, gatewayStatus]);
 
   return (
-    <CTAButton
+    <Button
+      className='glow-on-hover mint-button'
       disabled={isMinting || !isActive}
       onClick={async () => {
         if (candyMachine?.state.isActive && candyMachine?.state.gatekeeper) {
@@ -172,7 +172,7 @@ export const MintButton = ({
       variant="contained"
     >
       {getMintButtonContent()}
-    </CTAButton>
+    </Button>
   );
 };
 
