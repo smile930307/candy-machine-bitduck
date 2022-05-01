@@ -12,7 +12,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Parallax } from "react-parallax";
-import bgimg from "./assets/images/parallax.png"
+import bgimg from "./assets/images/bg.png"
 import {
   awaitTransactionSignatureConfirmation,
   CandyMachineAccount,
@@ -510,12 +510,10 @@ const Home = (props: HomeProps) => {
         </Container>
       </section>
 
-      <Parallax blur={0} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
-        <section >
-          <Container className="text-flex">
-            like this
-          </Container>
-        </section>
+      <Parallax blur={10} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
+        <div className="pharalex-text"> 
+          Lorem ipsum dolor sit amet
+        </div>
       </Parallax>
 
       <section id="mint">
@@ -802,11 +800,9 @@ const Home = (props: HomeProps) => {
       </section>
           
       <Parallax blur={0} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
-      <section >
-          <Container className="text-flex">
-            like this
-          </Container>
-        </section>
+        <div className="pharalex-text"> 
+          Lorem ipsum dolor sit amet
+        </div>
       </Parallax>
 
       <section id="faq">
