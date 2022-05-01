@@ -1,5 +1,4 @@
 import { BsTwitter, BsDiscord } from "react-icons/bs";
-import { Link } from "react-router-dom"
 
 const Footer = () => {
   const year = new Date().getFullYear();
