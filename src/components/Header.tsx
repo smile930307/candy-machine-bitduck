@@ -37,8 +37,8 @@ const Header = () => {
           >
             <img
               loading="lazy"
-              width="300"
-              height="120"
+              width="100%"
+              height="100%"
               src={logo}
               alt="brand logo"
             />
