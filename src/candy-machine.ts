@@ -654,14 +654,10 @@ export async function getNFTsForOwner(
   for (let index = 0; index < tokenAccounts.value.length; index++) {
       const tokenAccount = tokenAccounts.value[index];
       const tokenAmount = tokenAccount.account.data.parsed.info.tokenAmount;
-      console.log(allMintsCandyMachine.includes(
-        tokenAccount.account.data.parsed.info.mint
-    ))
       if (
           tokenAmount.amount === "1" &&
           tokenAmount.decimals === 0
       ) {
-          console.log('inside if')
           let [pda] = await anchor.web3.PublicKey.findProgramAddress(
               [
                   Buffer.from("metadata"),
@@ -678,12 +674,12 @@ export async function getNFTsForOwner(
               ownerAddress.toString(),
               accountInfo.value
           );
-          console.log({metadata})
-          const dataRes = await fetch(metadata.data.data.uri);
-          if (dataRes.status === 200) {
-              allTokens.push(await dataRes.json());
+          if (metadata.data.data.symbol == 'Bit Duckz') {
+            const dataRes = await fetch(metadata.data.data.uri);
+            if (dataRes.status === 200) {
+                allTokens.push(await dataRes.json());
+            }
           }
-          console.log({dataRes})
       }
   }
 
