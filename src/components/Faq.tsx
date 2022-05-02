@@ -1,3 +1,5 @@
+import img from "../assets/images/composicion2.png"
+
 const Faq = () => {
 
   return (
@@ -14,7 +16,7 @@ const Faq = () => {
                 loading="lazy"
                 width="350"
                 height="350"
-                src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/0.png"
+                src={img}
                 alt="dev"
               />
             </div>

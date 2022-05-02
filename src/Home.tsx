@@ -13,6 +13,18 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Parallax } from "react-parallax";
 import bgimg from "./assets/images/phara_bg.png"
+
+import gif1 from "./assets/images/gif1.gif"
+import gif2 from "./assets/images/gif2.gif"
+import gif3 from "./assets/images/gif3.gif"
+import gif4 from "./assets/images/gif4.gif"
+import gif5 from "./assets/images/gif5.gif"
+import gif6 from "./assets/images/gif6.gif"
+import gif7 from "./assets/images/gif7.gif"
+import gif8 from "./assets/images/gif8.gif"
+import gif9 from "./assets/images/gif9.gif"
+import gif10 from "./assets/images/gif10.gif"
+
 import {
   awaitTransactionSignatureConfirmation,
   CandyMachineAccount,
@@ -735,7 +747,7 @@ const Home = (props: HomeProps) => {
                       loading="lazy"
                       width="350"
                       height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/0.png"
+                      src={gif1}
                       alt="dev"
                     />
                   </div>
@@ -746,7 +758,7 @@ const Home = (props: HomeProps) => {
                       loading="lazy"
                       width="350"
                       height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/1.png"
+                      src={gif2}
                       alt="dev"
                     />
                   </div>
@@ -757,7 +769,7 @@ const Home = (props: HomeProps) => {
                       loading="lazy"
                       width="350"
                       height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/2.png"
+                      src={gif3}
                       alt="dev"
                     />
                   </div>
@@ -768,7 +780,7 @@ const Home = (props: HomeProps) => {
                       loading="lazy"
                       width="350"
                       height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/3.png"
+                      src={gif4}
                       alt="dev"
                     />
                   </div>
@@ -779,7 +791,7 @@ const Home = (props: HomeProps) => {
                       loading="lazy"
                       width="350"
                       height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/4.png"
+                      src={gif5}
                       alt="dev"
                     />
                   </div>
@@ -790,7 +802,51 @@ const Home = (props: HomeProps) => {
                       loading="lazy"
                       width="350"
                       height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/5.png"
+                      src={gif6}
+                      alt="dev"
+                    />
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="glow-on-hover-img">
+                    <img
+                      loading="lazy"
+                      width="350"
+                      height="350"
+                      src={gif7}
+                      alt="dev"
+                    />
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="glow-on-hover-img">
+                    <img
+                      loading="lazy"
+                      width="350"
+                      height="350"
+                      src={gif8}
+                      alt="dev"
+                    />
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="glow-on-hover-img">
+                    <img
+                      loading="lazy"
+                      width="350"
+                      height="350"
+                      src={gif9}
+                      alt="dev"
+                    />
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="glow-on-hover-img">
+                    <img
+                      loading="lazy"
+                      width="350"
+                      height="350"
+                      src={gif10}
                       alt="dev"
                     />
                     </div>
