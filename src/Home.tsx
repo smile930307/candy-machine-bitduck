@@ -462,7 +462,7 @@ const Home = (props: HomeProps) => {
                       alt="logo"
                     />
                   </div> */}
-                <h1>Ducks born on the Solana.</h1>
+                <h1>Ducks born on the Solana Blockchain.</h1>
               </div>
             </div>
             <div className="col-md-12 col-sm-12 col-xs-12 mx-auto mt-30">
@@ -470,12 +470,7 @@ const Home = (props: HomeProps) => {
                 <div className="col-sm mx-auto">
                   <h3 className="animated-gradient-text2">OUR STORY</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla ac auctor nunc, et maximus magna. Pellentesque sapien
-                    magna, venenatis sit amet commodo eu, pretium eget justo.
-                    Integer at urna auctor lorem porttitor hendrerit ut a diam.
-                    Ut vel nulla ut turpis sollicitudin pretium eget sit amet
-                    metus. Aenean id efficitur justo, ac semper lorem.
+                  2022 was the year. Ducks came together one by one until 3,333 ducks were born on a 16x16 pixel grid. Creating a sense of art flair, Mozart would of been proud. Bit Duckz like BitCoin looks to bring the decentralised pixel revolution onto the blockchain.
                   </p>
                 </div>
                 <div className="col-sm mx-auto">
@@ -910,11 +905,11 @@ const Home = (props: HomeProps) => {
         </Container>
       </section>
 
-      <section id="team">
+      {/* <section id="team">
         <Container>
           <Team />
         </Container>
-      </section>
+      </section> */}
     </>
   );
 };

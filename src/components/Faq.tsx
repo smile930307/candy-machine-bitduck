@@ -10,6 +10,8 @@ const Faq = () => {
       <div className="container">
         <div className="col-md-12 col-sm-12 col-xs-12 mb-4 medium-padding50">
           <h1 className="animated-gradient-text2">Bit Ducks Collection</h1>
+          <p>Limited collection of 3,333 Bit Duckz</p>
+          <p>All NFTs are unique</p>
         </div>
 
         <div className="row align-center">
