@@ -1,12 +1,10 @@
 import React from "react";
 import AnNFT from "./AnNFT";
+import useWalletNfts from "../hooks/useWalletNFTs";
 
 const MyNFT = () => {
 
-//    const [nfts] = useWalletNfts();
-
-    const nfts: any[] = [];
-
+    const [isLoading, nfts] = useWalletNfts();
     return (
         <div id="myNft" className="container text-center">
         <div className="row">

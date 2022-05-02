@@ -1,5 +1,6 @@
 import * as anchor from '@project-serum/anchor';
-
+import { fetchHashTable } from "./hooks/useHashTable";
+import { Metadata } from "@metaplex/js";
 import { MintLayout, TOKEN_PROGRAM_ID, Token } from '@solana/spl-token';
 import {
   SystemProgram,
@@ -635,3 +636,55 @@ export const shortenAddress = (address: string, chars = 4): string => {
 const sleep = (ms: number): Promise<void> => {
   return new Promise(resolve => setTimeout(resolve, ms));
 };
+
+export async function getNFTsForOwner(
+  connection: anchor.web3.Connection,
+  ownerAddress: anchor.web3.PublicKey
+) {
+  const allMintsCandyMachine = await fetchHashTable(
+      process.env.REACT_APP_CANDY_MACHINE_ID!
+  );
+  const allTokens = [];
+  const tokenAccounts = await connection.getParsedTokenAccountsByOwner(
+      ownerAddress,
+      {
+          programId: TOKEN_PROGRAM_ID,
+      }
+  );
+  console.log({tokenAccounts})
+  for (let index = 0; index < tokenAccounts.value.length; index++) {
+      const tokenAccount = tokenAccounts.value[index];
+      const tokenAmount = tokenAccount.account.data.parsed.info.tokenAmount;
+      console.log('for')
+      if (
+          tokenAmount.amount == "1" &&
+          tokenAmount.decimals == "0" &&
+          allMintsCandyMachine.includes(
+              tokenAccount.account.data.parsed.info.mint
+          )
+      ) {
+          let [pda] = await anchor.web3.PublicKey.findProgramAddress(
+              [
+                  Buffer.from("metadata"),
+                  TOKEN_METADATA_PROGRAM_ID.toBuffer(),
+                  new anchor.web3.PublicKey(
+                      tokenAccount.account.data.parsed.info.mint
+                  ).toBuffer(),
+              ],
+              TOKEN_METADATA_PROGRAM_ID
+          );
+          const accountInfo: any = await connection.getParsedAccountInfo(pda);
+
+          const metadata: any = new Metadata(
+              ownerAddress.toString(),
+              accountInfo.value
+          );
+          const dataRes = await fetch(metadata.data.data.uri);
+          if (dataRes.status === 200) {
+              allTokens.push(await dataRes.json());
+          }
+      }
+  }
+
+  return allTokens;
+}

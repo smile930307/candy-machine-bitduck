@@ -54,7 +54,7 @@ const connection = new anchor.web3.Connection(
 
 const App = () => {
   const endpoint = useMemo(() => clusterApiUrl(network), []);
-
+  
   const wallets = useMemo(
     () => [
       getPhantomWallet(),
