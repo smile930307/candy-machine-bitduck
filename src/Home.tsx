@@ -14,17 +14,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { Parallax } from "react-parallax";
 import bgimg from "./assets/images/phara_bg.png"
 
-import gif1 from "./assets/images/gif1.gif"
-import gif2 from "./assets/images/gif2.gif"
-import gif3 from "./assets/images/gif3.gif"
-import gif4 from "./assets/images/gif4.gif"
-import gif5 from "./assets/images/gif5.gif"
-import gif6 from "./assets/images/gif6.gif"
-import gif7 from "./assets/images/gif7.gif"
-import gif8 from "./assets/images/gif8.gif"
-import gif9 from "./assets/images/gif9.gif"
-import gif10 from "./assets/images/gif10.gif"
-
 import {
   awaitTransactionSignatureConfirmation,
   CandyMachineAccount,
@@ -435,7 +424,7 @@ const Home = (props: HomeProps) => {
                     <div className="col-sm mx-auto">
                       <div className="glow-on-hover-img">
                         <img
-                          className="mx-auto mint__image"
+                          className="mx-auto mint__image border-r24"
                           loading="lazy"
                           id="random"
                           src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/5.png"
@@ -744,10 +733,11 @@ const Home = (props: HomeProps) => {
                   <div className="text-center">
                   <div className="glow-on-hover-img">
                     <img
+                      className="border-r24"
                       loading="lazy"
                       width="350"
                       height="350"
-                      src={gif1}
+                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/0.png"
                       alt="dev"
                     />
                   </div>
@@ -755,10 +745,11 @@ const Home = (props: HomeProps) => {
                   <div className="text-center">
                   <div className="glow-on-hover-img">
                     <img
+                      className="border-r24"
                       loading="lazy"
                       width="350"
                       height="350"
-                      src={gif2}
+                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/1.png"
                       alt="dev"
                     />
                   </div>
@@ -766,10 +757,11 @@ const Home = (props: HomeProps) => {
                   <div className="text-center">
                   <div className="glow-on-hover-img">
                     <img
+                      className="border-r24"
                       loading="lazy"
                       width="350"
                       height="350"
-                      src={gif3}
+                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/2.png"
                       alt="dev"
                     />
                   </div>
@@ -777,10 +769,11 @@ const Home = (props: HomeProps) => {
                   <div className="text-center">
                   <div className="glow-on-hover-img">
                     <img
+                      className="border-r24"
                       loading="lazy"
                       width="350"
                       height="350"
-                      src={gif4}
+                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/3.png"
                       alt="dev"
                     />
                   </div>
@@ -788,10 +781,11 @@ const Home = (props: HomeProps) => {
                   <div className="text-center">
                   <div className="glow-on-hover-img">
                     <img
+                      className="border-r24"
                       loading="lazy"
                       width="350"
                       height="350"
-                      src={gif5}
+                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/4.png"
                       alt="dev"
                     />
                   </div>
@@ -799,54 +793,11 @@ const Home = (props: HomeProps) => {
                   <div className="text-center">
                     <div className="glow-on-hover-img">
                     <img
+                      className="border-r24"
                       loading="lazy"
                       width="350"
                       height="350"
-                      src={gif6}
-                      alt="dev"
-                    />
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="glow-on-hover-img">
-                    <img
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src={gif7}
-                      alt="dev"
-                    />
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="glow-on-hover-img">
-                    <img
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src={gif8}
-                      alt="dev"
-                    />
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="glow-on-hover-img">
-                    <img
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src={gif9}
-                      alt="dev"
-                    />
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="glow-on-hover-img">
-                    <img
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src={gif10}
+                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/5.png"
                       alt="dev"
                     />
                     </div>

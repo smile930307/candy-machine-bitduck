@@ -1,5 +1,10 @@
 import img from "../assets/images/composicion2.png"
 
+
+import gif1 from "../assets/images/gif1.gif"
+import gif2 from "../assets/images/gif2.gif"
+import gif3 from "../assets/images/gif3.gif"
+
 const Faq = () => {
 
   return (
@@ -11,7 +16,7 @@ const Faq = () => {
 
         <div className="row align-center">
           <div className="col-lg-6 col-sm-12 col-xs-12 text-center mb-20">
-            <div className="glow-on-hover-img">
+            {/* <div className="glow-on-hover-img"> */}
               <img
                 loading="lazy"
                 width="350"
@@ -19,7 +24,7 @@ const Faq = () => {
                 src={img}
                 alt="dev"
               />
-            </div>
+            {/* </div> */}
           </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 mb-5">
             <h3>
@@ -37,12 +42,13 @@ const Faq = () => {
           <div className="col-lg-6 col-sm-12 col-xs-12 text-center mobile-only mb-20">
             <div className="glow-on-hover-img">
                 <img
-                loading="lazy"
-                width="350"
-                height="350"
-                src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/1.png"
-                alt="dev"
-              />
+                  className="border-r24"
+                  loading="lazy"
+                  width="350"
+                  height="350"
+                  src={gif1}
+                  alt="dev"
+                />
             </div>
           </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 mb-5">
@@ -59,10 +65,11 @@ const Faq = () => {
           <div className="col-lg-6 col-sm-12 col-xs-12 text-center pc-only">
             <div className="glow-on-hover-img">
               <img
+                  className="border-r24"
                   loading="lazy"
                   width="350"
                   height="350"
-                  src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/1.png"
+                  src={gif1}
                   alt="dev"
                 />
             </div>
@@ -72,10 +79,11 @@ const Faq = () => {
           <div className="col-lg-6 col-sm-12 col-xs-12 text-center mb-20">
             <div className="glow-on-hover-img">
               <img
+                  className="border-r24"
                   loading="lazy"
                   width="350"
                   height="350"
-                  src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/2.png"
+                  src={gif2}
                   alt="dev"
                 />
             </div>
@@ -96,10 +104,11 @@ const Faq = () => {
           <div className="col-lg-6 col-sm-12 col-xs-12 text-center mobile-only mb-20">
             <div className="glow-on-hover-img">
               <img
+                  className="border-r24"
                   loading="lazy"
                   width="350"
                   height="350"
-                  src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/4.png"
+                  src={gif2}
                   alt="dev"
                 />
             </div>
@@ -118,10 +127,11 @@ const Faq = () => {
           <div className="col-lg-6 col-sm-12 col-xs-12 text-center pc-only">
             <div className="glow-on-hover-img">
               <img
+                className="border-r24"
                 loading="lazy"
                 width="350"
                 height="350"
-                src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/4.png"
+                src={gif2}
                 alt="dev"
               />
             </div>
