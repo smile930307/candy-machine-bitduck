@@ -17,7 +17,7 @@ export const CTAButton = styled(Button)`
 	margin-top: 10px;
 	margin-bottom: 5px;
 	background: linear-gradient(180deg, #604ae5 0%, #813eee 100%);
-	color: white;
+	color: black;
 	font-size: 16px;
 	font-weight: bold;
 
@@ -112,7 +112,7 @@ export const MintButton = ({
 
   return (
     <Button
-      className='glow-on-hover mint-button mt-20'
+      className='glow-on-hover mint-button mt-30'
       // disabled={isMinting || !isActive}
       onClick={async () => {
         if (candyMachine?.state.isActive && candyMachine?.state.gatekeeper) {

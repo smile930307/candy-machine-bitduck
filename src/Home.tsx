@@ -441,7 +441,7 @@ const Home = (props: HomeProps) => {
                         type="number"
                         // disabled={isMinting}
                         className="mint-amount-input"
-                        // value={mintCount}
+                        value={1}
                         // onChange={(e) => setMintCount((e.target as any).value)}
                       />
                       <Container>

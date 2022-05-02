@@ -42,7 +42,7 @@ const Team = () => {
             </p>
           </div>
         </div>
-        <div className="row">
+        <div className="row mt-20">
           <div className="col-lg-3 col-sm-3 col-xs-3">
             <img className="border-r24 card-effect" src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/33.png" width={200} alt="dev"/>
             <p className="member-name">

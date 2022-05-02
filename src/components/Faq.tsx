@@ -1,8 +1,8 @@
-import img from "../assets/images/composicion2.png"
-
+import simple from "../assets/images/simple.png"
 
 import gif1 from "../assets/images/gif1.gif"
 import gif2 from "../assets/images/gif2.gif"
+import gif3 from "../assets/images/gif3.gif"
 
 const Faq = () => {
 
@@ -17,10 +17,11 @@ const Faq = () => {
           <div className="col-lg-6 col-sm-12 col-xs-12 text-center mb-20">
             {/* <div className="glow-on-hover-img"> */}
               <img
+                className="border-r24"
                 loading="lazy"
                 width="350"
                 height="350"
-                src={img}
+                src={gif3}
                 alt="dev"
               />
             {/* </div> */}
@@ -37,7 +38,15 @@ const Faq = () => {
             </p>
           </div>
         </div>
-        <div className="row align-center">
+        <div>
+          <img
+            loading="lazy"
+            width="100%"
+            src={simple}
+            alt="dev"
+          />
+        </div>
+        <div className="row align-center mt-50">
           <div className="col-lg-6 col-sm-12 col-xs-12 text-center mobile-only mb-20">
             <div className="glow-on-hover-img">
                 <img
@@ -74,7 +83,15 @@ const Faq = () => {
             </div>
           </div>
         </div>
-        <div className="row align-center">
+        <div>
+          <img
+            loading="lazy"
+            width="100%"
+            src={simple}
+            alt="dev"
+          />
+        </div>
+        <div className="row align-center mt-50">
           <div className="col-lg-6 col-sm-12 col-xs-12 text-center mb-20">
             <div className="glow-on-hover-img">
               <img
@@ -99,7 +116,15 @@ const Faq = () => {
             </p>
           </div>
         </div>
-        <div className="row align-center">
+        <div>
+          <img
+            loading="lazy"
+            width="100%"
+            src={simple}
+            alt="dev"
+          />
+        </div>
+        <div className="row align-center mt-50">
           <div className="col-lg-6 col-sm-12 col-xs-12 text-center mobile-only mb-20">
             <div className="glow-on-hover-img">
               <img
