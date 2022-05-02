@@ -2,10 +2,10 @@
 import { useEffect } from "react";
 
 export default function AnNFT({ nft }: any) {
-  useEffect(() => {
-    console.log(nft);
-  }, []);
-
+  // useEffect(() => {
+  //   console.log(nft);
+  // }, []);
+  console.log(nft);
   return (
     <div className="col-lg-12 col-sm-12 col-xs-12">
       <div className="row mynft__collention">
@@ -19,9 +19,9 @@ export default function AnNFT({ nft }: any) {
           <div>
             <p>Attributes</p>
             <hr />
-            {(nft.attributes as any).map((item: any, i: number) => {
+            {/* {(nft.attributes as any).map((item: any, i: number) => {
               return <p key={i}> {item.value} | {item.trait_type} </p>;
-            })}
+            })} */}
           </div>
         </div>
       </div>
