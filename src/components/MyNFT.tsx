@@ -8,7 +8,6 @@ import Box from '@mui/material/Box';
 const MyNFT = () => {
 
     const [isLoading, nfts] = useWalletNfts();
-    //console.log(isLoading)
     return (
         <div id="myNft" className="container text-center">
             <div className="row">
