@@ -1,5 +1,4 @@
 import * as anchor from '@project-serum/anchor';
-import { fetchHashTable } from "./hooks/useHashTable";
 import { Metadata } from "@metaplex/js";
 import { MintLayout, TOKEN_PROGRAM_ID, Token } from '@solana/spl-token';
 import {
@@ -674,7 +673,7 @@ export async function getNFTsForOwner(
               ownerAddress.toString(),
               accountInfo.value
           );
-          if (metadata.data.data.symbol == 'Bit Duckz') {
+          if (metadata.data.data.symbol === 'Bit Duckz') {
             const dataRes = await fetch(metadata.data.data.uri);
             if (dataRes.status === 200) {
               console.log({dataRes})
