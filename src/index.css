@@ -34,6 +34,7 @@ body {
 h3, h4 {
   color: white;
   font-family: "quantico-bold";
+  font-size: 1.5rem;
 }
 
 /* Remove arrow input*/
@@ -200,7 +201,7 @@ button {
 
 p {
   color: whitesmoke;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   line-height: 45px;
   /* text-align: justify; */
   font-family: "PressStart2P-Regular";
@@ -511,7 +512,7 @@ section#mint {
   align-items: center;
   height: 400px;
   color: #FFCE00;
-  font-size: 42px;
+  font-size: 30px;
   text-align: center;
 }
 

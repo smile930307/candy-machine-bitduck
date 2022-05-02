@@ -23,13 +23,17 @@ const MyNFT = () => {
                             </>
                         )
                             :
-                        (
-                            <>
-                                {(nfts as any).map((nft: any, i: number) => {
-                                return <AnNFT key={i} nft={nft} />;
-                                })}
-                            </>
-                        )}
+                        
+                            (nfts as any[]).length > 0 ? (
+                                <>
+                                    {(nfts as any).map((nft: any, i: number) => {
+                                        return <AnNFT key={i} nft={nft} />;
+                                    })}
+                                </>
+                            ) : (
+                                <p>You dont have any NFT to show yet.</p>
+                            )
+                        }
                     </div>
                 </div>
             </div>
