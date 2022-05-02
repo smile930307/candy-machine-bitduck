@@ -651,18 +651,18 @@ export async function getNFTsForOwner(
           programId: TOKEN_PROGRAM_ID,
       }
   );
-  console.log({tokenAccounts})
+  console.log({allMintsCandyMachine})
   for (let index = 0; index < tokenAccounts.value.length; index++) {
       const tokenAccount = tokenAccounts.value[index];
       const tokenAmount = tokenAccount.account.data.parsed.info.tokenAmount;
-      console.log('for')
+      console.log(allMintsCandyMachine.includes(
+        tokenAccount.account.data.parsed.info.mint
+    ))
       if (
-          tokenAmount.amount == "1" &&
-          tokenAmount.decimals == "0" &&
-          allMintsCandyMachine.includes(
-              tokenAccount.account.data.parsed.info.mint
-          )
+          tokenAmount.amount === "1" &&
+          tokenAmount.decimals === 0
       ) {
+          console.log('inside if')
           let [pda] = await anchor.web3.PublicKey.findProgramAddress(
               [
                   Buffer.from("metadata"),
@@ -679,10 +679,12 @@ export async function getNFTsForOwner(
               ownerAddress.toString(),
               accountInfo.value
           );
+          console.log({metadata})
           const dataRes = await fetch(metadata.data.data.uri);
           if (dataRes.status === 200) {
               allTokens.push(await dataRes.json());
           }
+          console.log({dataRes})
       }
   }
 

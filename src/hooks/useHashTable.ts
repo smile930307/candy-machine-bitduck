@@ -40,7 +40,7 @@ export async function fetchHashTable(
             ],
         }
     );
-
+        
     const mintHashes: any = [];
 
     for (let index = 0; index < metadataAccounts.length; index++) {
