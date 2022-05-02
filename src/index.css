@@ -837,8 +837,8 @@ a {
   font-family: "poppins-bold";
 }
 .mynft__collention {
-  border: 1px solid white;
-  border-radius: 15px;
+  border: 1px solid #FFCE00;
+  border-radius: 24px;
   margin-bottom: 2vh;
 }
 .mynft__collention>div {
@@ -851,6 +851,7 @@ a {
 .mynft__image {
   width: 100%;
   height: auto;
+  border-radius: 24px;
 }
 
 @media (max-width: 1000px) {

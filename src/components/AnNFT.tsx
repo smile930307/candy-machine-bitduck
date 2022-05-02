@@ -8,7 +8,9 @@ export default function AnNFT({ nft }: any) {
     <div className="col-lg-12 col-sm-12 col-xs-12">
       <div className="row mynft__collention">
         <div className="col-lg-6 col-sm-12 col-xs-12">
-          <img className="mynft__image" src={nft.image} alt={nft.description || nft.name} />
+          <div className="glow-on-hover-img">
+            <img className="mynft__image" src={nft.image} alt={nft.description || nft.name} />
+          </div>
         </div>
         <div className="col-lg-6 col-sm-12 col-xs-12">
           <div >
