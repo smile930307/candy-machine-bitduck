@@ -13,6 +13,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Parallax } from "react-parallax";
 import bgimg from "./assets/images/phara_bg.png"
+import gif1 from "./assets/images/gif1.gif"
 
 import {
   awaitTransactionSignatureConfirmation,
@@ -401,8 +402,7 @@ const Home = (props: HomeProps) => {
                     />
                   </div> */}
                 <h1>
-                  Ducks born on the Solana blockchain. Limited edition NFT
-                  collection.
+                  Ducks born on the Solana.
                 </h1>
               </div>
             </div>
@@ -427,7 +427,7 @@ const Home = (props: HomeProps) => {
                           className="mx-auto mint__image border-r24"
                           loading="lazy"
                           id="random"
-                          src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/5.png"
+                          src={gif1}
                           alt="random nft"
                           width="350"
                           height="350"
