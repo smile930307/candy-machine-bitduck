@@ -1303,7 +1303,7 @@ a {
 }
 
 .makeStyles-done-2{
-  background: green;
+  background: green !important;
 }
 
 .member-name{
@@ -1321,4 +1321,9 @@ a {
 
 .card-effect{
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.custom_a{
+  text-shadow: none;
+  font-size: 12px;
 }

@@ -12,8 +12,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Parallax } from "react-parallax";
-import bgimg from "./assets/images/phara_bg.png"
-import gif1 from "./assets/images/gif1.gif"
+import bgimg from "./assets/images/phara_bg.png";
+import gif1 from "./assets/images/gif1.gif";
+import green_check from "./assets/images/checkgreen.png";
 
 import {
   awaitTransactionSignatureConfirmation,
@@ -33,6 +34,55 @@ import { sendTransaction } from "./connection";
 import Faq from "./components/Faq";
 import styled from "styled-components";
 import Team from "./components/Team";
+
+import Button from "@mui/material/Button";
+import { styled as mstyled } from "@mui/material/styles";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import React from "react";
+
+const BootstrapDialog = mstyled(Dialog)(({ theme }) => ({
+  "& .MuiDialogContent-root": {
+    padding: theme.spacing(2),
+  },
+  "& .MuiDialogActions-root": {
+    padding: theme.spacing(1),
+  },
+}));
+
+export interface DialogTitleProps {
+  id: string;
+  children?: React.ReactNode;
+  onClose: () => void;
+}
+
+const BootstrapDialogTitle = (props: DialogTitleProps) => {
+  const { children, onClose, ...other } = props;
+
+  return (
+    <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
+      {children}
+      {onClose ? (
+        <IconButton
+          aria-label="close"
+          onClick={onClose}
+          sx={{
+            position: "absolute",
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+      ) : null}
+    </DialogTitle>
+  );
+};
 
 const MintContainer = styled.div``; // add your owns styles here
 
@@ -80,6 +130,15 @@ const Home = (props: HomeProps) => {
       signTransaction: wallet.signTransaction,
     } as anchor.Wallet;
   }, [wallet]);
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const refreshCandyMachineState = useCallback(async () => {
     if (!anchorWallet) {
@@ -306,13 +365,13 @@ const Home = (props: HomeProps) => {
           setIsActive((candyMachine.state.isActive = remaining > 0));
           candyMachine.state.isSoldOut = remaining === 0;
           setSetupTxn(undefined);
-          setAlertState({
-            open: true,
-            message: "Congratulations! Mint succeeded!",
-            severity: "success",
-          });
-
-
+          console.log('dsssssssss',candyMachine.state)
+          setOpen(true);
+        //   setAlertState({
+        //     open: true,
+        //     message: "Congratulations! Mint succeeded!",
+        //     severity: "success",
+        //   });
         } else {
           setAlertState({
             open: true,
@@ -391,8 +450,11 @@ const Home = (props: HomeProps) => {
     <>
       <section id="home">
         <Container>
+          <Button variant="outlined" onClick={handleClickOpen}>
+            Open dialog
+          </Button>
           <div className="row">
-          <div className="col-md-12 col-sm-12 col-xs-12 mx-auto">
+            <div className="col-md-12 col-sm-12 col-xs-12 mx-auto">
               <div className="row row-centered">
                 {/* <div className="col-sm mx-auto">
                     <Image
@@ -403,9 +465,7 @@ const Home = (props: HomeProps) => {
                       alt="logo"
                     />
                   </div> */}
-                <h1>
-                  Ducks born on the Solana.
-                </h1>
+                <h1>Ducks born on the Solana.</h1>
               </div>
             </div>
             <div className="col-md-12 col-sm-12 col-xs-12 mx-auto mt-30">
@@ -522,7 +582,10 @@ const Home = (props: HomeProps) => {
                                     <MintCountdown
                                       key="goLive"
                                       date={getCountdownDate(candyMachine)}
-                                      style={{ justifyContent: "flex-end", background:"green" }}
+                                      style={{
+                                        justifyContent: "flex-end",
+                                        background: "green",
+                                      }}
                                       status={
                                         candyMachine?.state?.isSoldOut ||
                                         (endDate &&
@@ -677,17 +740,6 @@ const Home = (props: HomeProps) => {
                             {alertState.message}
                           </Alert>
                         </Snackbar>
-                        {/* <Modal
-                          keepMounted
-                          open={true}
-                          // onClose={handleClose}
-                          aria-labelledby="keep-mounted-modal-title"
-                          aria-describedby="keep-mounted-modal-description"
-                        >
-                            <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
-                              Text in a modal
-                            </Typography>
-                        </Modal> */}
                       </Container>
                     </div>
                   </div>
@@ -695,6 +747,35 @@ const Home = (props: HomeProps) => {
                 </div>
               </div>
             </div>
+            <BootstrapDialog
+              onClose={handleClose}
+              aria-labelledby="customized-dialog-title"
+              open={open}
+            >
+              <BootstrapDialogTitle
+                id="customized-dialog-title"
+                onClose={handleClose}
+              >
+                Mint Successfully
+              </BootstrapDialogTitle>
+              <DialogContent dividers>
+                <img
+                  className="mx-auto mint__image border-r24"
+                  loading="lazy"
+                  id="random"
+                  src={green_check}
+                  alt="random nft"
+                  width="350"
+                  height="350"
+                />
+                <div><a className="custom_a" href="https://solscan.io/" target="_blank" rel="noreferrer">see your tx on explorer</a></div>
+              </DialogContent>
+              <DialogActions>
+                <Button autoFocus onClick={handleClose}>
+                  Close
+                </Button>
+              </DialogActions>
+            </BootstrapDialog>
           </div>
         </Container>
       </section>
@@ -704,7 +785,7 @@ const Home = (props: HomeProps) => {
           Lorem ipsum dolor sit amet
         </div>
       </Parallax> */}
-  
+
       <section id="mint">
         <Container>
           <div className="row">
@@ -744,75 +825,75 @@ const Home = (props: HomeProps) => {
                   ]}
                 >
                   <div className="text-center">
-                  <div className="glow-on-hover-img">
-                    <img
-                      className="border-r24"
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/0.png"
-                      alt="dev"
-                    />
-                  </div>
-                  </div>
-                  <div className="text-center">
-                  <div className="glow-on-hover-img">
-                    <img
-                      className="border-r24"
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/1.png"
-                      alt="dev"
-                    />
-                  </div>
-                  </div>
-                  <div className="text-center">
-                  <div className="glow-on-hover-img">
-                    <img
-                      className="border-r24"
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/2.png"
-                      alt="dev"
-                    />
-                  </div>
-                  </div>
-                  <div className="text-center">
-                  <div className="glow-on-hover-img">
-                    <img
-                      className="border-r24"
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/3.png"
-                      alt="dev"
-                    />
-                  </div>
-                  </div>
-                  <div className="text-center">
-                  <div className="glow-on-hover-img">
-                    <img
-                      className="border-r24"
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/4.png"
-                      alt="dev"
-                    />
-                  </div>
+                    <div className="glow-on-hover-img">
+                      <img
+                        className="border-r24"
+                        loading="lazy"
+                        width="350"
+                        height="350"
+                        src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/0.png"
+                        alt="dev"
+                      />
+                    </div>
                   </div>
                   <div className="text-center">
                     <div className="glow-on-hover-img">
-                    <img
-                      className="border-r24"
-                      loading="lazy"
-                      width="350"
-                      height="350"
-                      src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/5.png"
-                      alt="dev"
-                    />
+                      <img
+                        className="border-r24"
+                        loading="lazy"
+                        width="350"
+                        height="350"
+                        src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/1.png"
+                        alt="dev"
+                      />
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="glow-on-hover-img">
+                      <img
+                        className="border-r24"
+                        loading="lazy"
+                        width="350"
+                        height="350"
+                        src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/2.png"
+                        alt="dev"
+                      />
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="glow-on-hover-img">
+                      <img
+                        className="border-r24"
+                        loading="lazy"
+                        width="350"
+                        height="350"
+                        src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/3.png"
+                        alt="dev"
+                      />
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="glow-on-hover-img">
+                      <img
+                        className="border-r24"
+                        loading="lazy"
+                        width="350"
+                        height="350"
+                        src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/4.png"
+                        alt="dev"
+                      />
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="glow-on-hover-img">
+                      <img
+                        className="border-r24"
+                        loading="lazy"
+                        width="350"
+                        height="350"
+                        src="https://s3.eu-central-1.wasabisys.com/somefiles/wormsol/5.png"
+                        alt="dev"
+                      />
                     </div>
                   </div>
                 </Slider>
@@ -821,11 +902,9 @@ const Home = (props: HomeProps) => {
           </div>
         </Container>
       </section>
-          
+
       <Parallax blur={0} bgImage={bgimg} bgImageAlt="the cat" strength={400}>
-        <div className="pharalex-text"> 
-          Lorem ipsum dolor sit amet
-        </div>
+        <div className="pharalex-text">Lorem ipsum dolor sit amet</div>
       </Parallax>
 
       <section id="faq">
