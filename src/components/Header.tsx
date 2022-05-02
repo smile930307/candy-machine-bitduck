@@ -79,7 +79,7 @@ const Header = () => {
                 className="nav-link"
               >
                 <Dropdown.Item
-                  href="https://twitter.com/SQUID7777NFT"
+                  href="https://twitter.com/bitduckz"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -87,7 +87,7 @@ const Header = () => {
                   Twitter
                 </Dropdown.Item>
                 <Dropdown.Item
-                  href="https://discord.gg/rUS3SxeY2z"
+                  href="https://twitter.com/bitduckz"
                   rel="noopener noreferrer" 
                   target="_blank"
                 >
