@@ -641,9 +641,9 @@ export async function getNFTsForOwner(
   connection: anchor.web3.Connection,
   ownerAddress: anchor.web3.PublicKey
 ) {
-  const allMintsCandyMachine = await fetchHashTable(
-      process.env.REACT_APP_CANDY_MACHINE_ID!
-  );
+  // const allMintsCandyMachine = await fetchHashTable(
+  //     process.env.REACT_APP_CANDY_MACHINE_ID!
+  // );
   const allTokens = [];
   const tokenAccounts = await connection.getParsedTokenAccountsByOwner(
       ownerAddress,
@@ -669,7 +669,7 @@ export async function getNFTsForOwner(
               TOKEN_METADATA_PROGRAM_ID
           );
           const accountInfo: any = await connection.getParsedAccountInfo(pda);
-
+          
           const metadata: any = new Metadata(
               ownerAddress.toString(),
               accountInfo.value
@@ -677,6 +677,7 @@ export async function getNFTsForOwner(
           if (metadata.data.data.symbol == 'Bit Duckz') {
             const dataRes = await fetch(metadata.data.data.uri);
             if (dataRes.status === 200) {
+              console.log({dataRes})
                 allTokens.push(await dataRes.json());
             }
           }
