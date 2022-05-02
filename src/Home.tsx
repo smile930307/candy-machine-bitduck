@@ -450,9 +450,6 @@ const Home = (props: HomeProps) => {
     <>
       <section id="home">
         <Container>
-          <Button variant="outlined" onClick={handleClickOpen}>
-            Open dialog
-          </Button>
           <div className="row">
             <div className="col-md-12 col-sm-12 col-xs-12 mx-auto">
               <div className="row row-centered">

@@ -1327,3 +1327,7 @@ a {
   text-shadow: none;
   font-size: 12px;
 }
+
+#customized-dialog-title{
+  text-shadow: none;
+}
