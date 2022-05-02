@@ -113,7 +113,7 @@ export const MintButton = ({
   return (
     <Button
       className='glow-on-hover mint-button'
-      disabled={isMinting || !isActive}
+      // disabled={isMinting || !isActive}
       onClick={async () => {
         if (candyMachine?.state.isActive && candyMachine?.state.gatekeeper) {
           const network =

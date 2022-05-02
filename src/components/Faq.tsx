@@ -3,7 +3,6 @@ import img from "../assets/images/composicion2.png"
 
 import gif1 from "../assets/images/gif1.gif"
 import gif2 from "../assets/images/gif2.gif"
-import gif3 from "../assets/images/gif3.gif"
 
 const Faq = () => {
 
