@@ -1,10 +1,8 @@
-import React from "react";
 import AnNFT from "./AnNFT";
 
 const MyNFT = ({ nfts }: any) => {
-
-   return (
-<div id="myNft" className="container text-center">
+  return (
+    <div id="myNft" className="container text-center">
       <div className="row">
         <div className="col-lg-12 col-sm-12 col-xs-12 mb-5">
           <h2>My NFTs</h2>
@@ -16,8 +14,7 @@ const MyNFT = ({ nfts }: any) => {
         </div>
       </div>
     </div>
-   );
+  );
 };
 
 export default MyNFT;
-
