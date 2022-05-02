@@ -14,7 +14,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { Parallax } from "react-parallax";
 import bgimg from "./assets/images/phara_bg.png"
 import gif1 from "./assets/images/gif1.gif"
-import Modal from '@mui/material/Modal';
 
 import {
   awaitTransactionSignatureConfirmation,
