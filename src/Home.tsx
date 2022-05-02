@@ -14,6 +14,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Parallax } from "react-parallax";
 import bgimg from "./assets/images/phara_bg.png"
 import gif1 from "./assets/images/gif1.gif"
+// import Modal from '@mui/material/Modal';
 
 import {
   awaitTransactionSignatureConfirmation,
@@ -311,6 +312,8 @@ const Home = (props: HomeProps) => {
             message: "Congratulations! Mint succeeded!",
             severity: "success",
           });
+
+
         } else {
           setAlertState({
             open: true,
@@ -520,7 +523,7 @@ const Home = (props: HomeProps) => {
                                     <MintCountdown
                                       key="goLive"
                                       date={getCountdownDate(candyMachine)}
-                                      style={{ justifyContent: "flex-end" }}
+                                      style={{ justifyContent: "flex-end", background:"green" }}
                                       status={
                                         candyMachine?.state?.isSoldOut ||
                                         (endDate &&
@@ -675,6 +678,17 @@ const Home = (props: HomeProps) => {
                             {alertState.message}
                           </Alert>
                         </Snackbar>
+                        {/* <Modal
+                          keepMounted
+                          open={true}
+                          // onClose={handleClose}
+                          aria-labelledby="keep-mounted-modal-title"
+                          aria-describedby="keep-mounted-modal-description"
+                        >
+                            <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
+                              Text in a modal
+                            </Typography>
+                        </Modal> */}
                       </Container>
                     </div>
                   </div>
