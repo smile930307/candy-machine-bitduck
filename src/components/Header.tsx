@@ -63,7 +63,16 @@ const Header = () => {
                     Home
                   </Button>
                 </Link>
-              </Nav.Item>              
+              </Nav.Item>
+              <Nav.Item className="nav-link">
+                <Link to="/nfts">
+                  <Button
+                    role="button"
+                    aria-expanded="false">
+                    MyNFT
+                  </Button>
+                </Link>
+              </Nav.Item>
               <DropdownButton
                 id="navbarDropdownSocialMedia"
                 title="Social Media"
