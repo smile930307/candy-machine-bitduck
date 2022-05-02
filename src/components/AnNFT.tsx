@@ -18,9 +18,9 @@ export default function AnNFT({ nft }: any) {
           <div>
             <p>Attributes</p>
             <hr />
-            {/* {(nft.attributes as any).map((item: any, i: number) => {
+            {(nft.attributes as any).map((item: any, i: number) => {
               return <p key={i}> {item.value} | {item.trait_type} </p>;
-            })} */}
+            })}
           </div>
         </div>
       </div>

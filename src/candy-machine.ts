@@ -675,6 +675,7 @@ export async function getNFTsForOwner(
               accountInfo.value
           );
           if (metadata.data.data.symbol == 'Bit Duckz') {
+            console.log(tokenAccount.account.data)
             const dataRes = await fetch(metadata.data.data.uri);
             if (dataRes.status === 200) {
                 allTokens.push(await dataRes.json());
