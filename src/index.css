@@ -72,12 +72,13 @@ input[type="number"] {
 }
 
 .dropdown-menu {
-  background: linear-gradient(
-90.82deg, #d6fcb5 2.76%, #79f80c 105.28%) !important;
+  /* background: linear-gradient(
+90.82deg, #d6fcb5 2.76%, #79f80c 105.28%) !important; */
+background-color: grey;
 }
 
 .dropdown-menu a {
-  color: #1B1B1B !important;
+  color: white !important;
 }
 
 .mint__image {
