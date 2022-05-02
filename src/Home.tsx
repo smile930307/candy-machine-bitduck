@@ -33,7 +33,6 @@ import { GatewayProvider } from "@civic/solana-gateway-react";
 import { sendTransaction } from "./connection";
 import Faq from "./components/Faq";
 import styled from "styled-components";
-import Team from "./components/Team";
 
 import Button from "@mui/material/Button";
 import { styled as mstyled } from "@mui/material/styles";
