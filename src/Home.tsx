@@ -15,6 +15,7 @@ import { Parallax } from "react-parallax";
 import bgimg from "./assets/images/phara_bg.png";
 import gif1 from "./assets/images/gif1.gif";
 import green_check from "./assets/images/checkgreen.png";
+import LogoBitDuckz from "./assets/images/LogoBitDuckz.png";
 
 import {
   awaitTransactionSignatureConfirmation,
@@ -132,7 +133,7 @@ const Home = (props: HomeProps) => {
   }, [wallet]);
 
   const [open, setOpen] = React.useState(false);
-  
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -286,8 +287,8 @@ const Home = (props: HomeProps) => {
     beforeTransactions: Transaction[] = [],
     afterTransactions: Transaction[] = []
   ) => {
-    const txs:any[] = []
-    for(let i = 0; i<mintCount; i++) {
+    const txs: any[] = [];
+    for (let i = 0; i < mintCount; i++) {
       try {
         setIsUserMinting(true);
         document.getElementById("#identity")?.click();
@@ -336,7 +337,7 @@ const Home = (props: HomeProps) => {
               severity: "info",
             });
           }
-  
+
           let mintOne = await mintOneToken(
             candyMachine,
             wallet.publicKey,
@@ -354,7 +355,7 @@ const Home = (props: HomeProps) => {
               true
             );
           }
-  
+
           if (status && !status.err) {
             // manual update since the refresh might not detect
             // the change immediately
@@ -363,16 +364,15 @@ const Home = (props: HomeProps) => {
             setIsActive((candyMachine.state.isActive = remaining > 0));
             candyMachine.state.isSoldOut = remaining === 0;
             setSetupTxn(undefined);
-            console.log('dsssssssss',candyMachine.state)
-            txs.push(mintTxId)
-            if(i==mintCount){
+            txs.push(mintTxId);
+            if (i === mintCount) {
               setOpen(true);
             }
-          //   setAlertState({
-          //     open: true,
-          //     message: "Congratulations! Mint succeeded!",
-          //     severity: "success",
-          //   });
+            //   setAlertState({
+            //     open: true,
+            //     message: "Congratulations! Mint succeeded!",
+            //     severity: "success",
+            //   });
           } else {
             setAlertState({
               open: true,
@@ -401,7 +401,7 @@ const Home = (props: HomeProps) => {
             message = `Minting period hasn't started yet.`;
           }
         }
-  
+
         setAlertState({
           open: true,
           message,
@@ -455,16 +455,15 @@ const Home = (props: HomeProps) => {
           <div className="row">
             <div className="col-md-12 col-sm-12 col-xs-12 mx-auto">
               <div className="row row-centered">
-                {/* <div className="col-sm mx-auto">
-                    <Image
-                      loading="lazy"
-                      width="524"
-                      height="262"
-                      src="/logo_header.png"
-                      alt="logo"
-                    />
-                  </div> */}
                 <h1>Ducks born on the Solana Blockchain.</h1>
+                <div className="col-sm mx-auto">
+                  <img
+                    loading="lazy"
+                    width="100%"
+                    src={LogoBitDuckz}
+                    alt="logo"
+                  />
+                </div>
               </div>
             </div>
             <div className="col-md-12 col-sm-12 col-xs-12 mx-auto mt-30">
@@ -472,7 +471,11 @@ const Home = (props: HomeProps) => {
                 <div className="col-sm mx-auto">
                   <h3 className="animated-gradient-text2">OUR STORY</h3>
                   <p>
-                  2022 was the year. Ducks came together one by one until 3,333 ducks were born on a 16x16 pixel grid. Creating a sense of art flair, Mozart would of been proud. Bit Duckz like BitCoin looks to bring the decentralised pixel revolution onto the blockchain.
+                    2022 was the year. Ducks came together one by one until
+                    3,333 ducks were born on a 16x16 pixel grid. Creating a
+                    sense of art flair, Mozart would of been proud. Bit Duckz
+                    like BitCoin looks to bring the decentralised pixel
+                    revolution onto the blockchain.
                   </p>
                 </div>
                 <div className="col-sm mx-auto">
@@ -762,7 +765,16 @@ const Home = (props: HomeProps) => {
                   width="350"
                   height="350"
                 />
-                <div><a className="custom_a" href="https://solscan.io/" target="_blank" rel="noreferrer">see your tx on explorer</a></div>
+                <div>
+                  <a
+                    className="custom_a"
+                    href="https://solscan.io/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    see your tx on explorer
+                  </a>
+                </div>
               </DialogContent>
               <DialogActions>
                 <Button autoFocus onClick={handleClose}>
