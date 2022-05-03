@@ -108,6 +108,7 @@ const Home = (props: HomeProps) => {
   const [isPresale, setIsPresale] = useState(false);
   const [discountPrice, setDiscountPrice] = useState<anchor.BN>();
   const [needTxnSplit, setNeedTxnSplit] = useState(true);
+  const [mintCount, setMintCount] = useState(1);
   const [setupTxn, setSetupTxn] = useState<SetupState>();
 
   const rpcUrl = props.rpcHost;
@@ -285,128 +286,133 @@ const Home = (props: HomeProps) => {
     beforeTransactions: Transaction[] = [],
     afterTransactions: Transaction[] = []
   ) => {
-    try {
-      setIsUserMinting(true);
-      document.getElementById("#identity")?.click();
-      if (wallet.connected && candyMachine?.program && wallet.publicKey) {
-        let setupMint: SetupState | undefined;
-        if (needTxnSplit && setupTxn === undefined) {
-          setAlertState({
-            open: true,
-            message: "Please sign account setup transaction",
-            severity: "info",
-          });
-          setupMint = await createAccountsForMint(
+    const txs:any[] = []
+    for(let i = 0; i<mintCount; i++) {
+      try {
+        setIsUserMinting(true);
+        document.getElementById("#identity")?.click();
+        if (wallet.connected && candyMachine?.program && wallet.publicKey) {
+          let setupMint: SetupState | undefined;
+          if (needTxnSplit && setupTxn === undefined) {
+            setAlertState({
+              open: true,
+              message: "Please sign account setup transaction",
+              severity: "info",
+            });
+            setupMint = await createAccountsForMint(
+              candyMachine,
+              wallet.publicKey
+            );
+            let status: any = { err: true };
+            if (setupMint.transaction) {
+              status = await awaitTransactionSignatureConfirmation(
+                setupMint.transaction,
+                props.txTimeout,
+                props.connection,
+                true
+              );
+            }
+            if (status && !status.err) {
+              setSetupTxn(setupMint);
+              setAlertState({
+                open: true,
+                message:
+                  "Setup transaction succeeded! Please sign minting transaction",
+                severity: "info",
+              });
+            } else {
+              setAlertState({
+                open: true,
+                message: "Mint failed! Please try again!",
+                severity: "error",
+              });
+              setIsUserMinting(false);
+              return;
+            }
+          } else {
+            setAlertState({
+              open: true,
+              message: "Please sign minting transaction",
+              severity: "info",
+            });
+          }
+  
+          let mintOne = await mintOneToken(
             candyMachine,
-            wallet.publicKey
+            wallet.publicKey,
+            beforeTransactions,
+            afterTransactions,
+            setupMint ?? setupTxn
           );
+          const mintTxId = mintOne[0];
           let status: any = { err: true };
-          if (setupMint.transaction) {
+          if (mintTxId) {
             status = await awaitTransactionSignatureConfirmation(
-              setupMint.transaction,
+              mintTxId,
               props.txTimeout,
               props.connection,
               true
             );
           }
+  
           if (status && !status.err) {
-            setSetupTxn(setupMint);
-            setAlertState({
-              open: true,
-              message:
-                "Setup transaction succeeded! Please sign minting transaction",
-              severity: "info",
-            });
+            // manual update since the refresh might not detect
+            // the change immediately
+            let remaining = itemsRemaining! - 1;
+            setItemsRemaining(remaining);
+            setIsActive((candyMachine.state.isActive = remaining > 0));
+            candyMachine.state.isSoldOut = remaining === 0;
+            setSetupTxn(undefined);
+            console.log('dsssssssss',candyMachine.state)
+            txs.push(mintTxId)
+            if(i==mintCount){
+              setOpen(true);
+            }
+          //   setAlertState({
+          //     open: true,
+          //     message: "Congratulations! Mint succeeded!",
+          //     severity: "success",
+          //   });
           } else {
             setAlertState({
               open: true,
               message: "Mint failed! Please try again!",
               severity: "error",
             });
-            setIsUserMinting(false);
-            return;
+          }
+        }
+      } catch (error: any) {
+        let message = error.msg || "Minting failed! Please try again!";
+        if (!error.msg) {
+          if (!error.message) {
+            message = "Transaction timeout! Please try again.";
+          } else if (error.message.indexOf("0x137")) {
+            console.log(error);
+            message = `SOLD OUT!`;
+          } else if (error.message.indexOf("0x135")) {
+            message = `Insufficient funds to mint. Please fund your wallet.`;
           }
         } else {
-          setAlertState({
-            open: true,
-            message: "Please sign minting transaction",
-            severity: "info",
-          });
+          if (error.code === 311) {
+            console.log(error);
+            message = `SOLD OUT!`;
+            window.location.reload();
+          } else if (error.code === 312) {
+            message = `Minting period hasn't started yet.`;
+          }
         }
-
-        let mintOne = await mintOneToken(
-          candyMachine,
-          wallet.publicKey,
-          beforeTransactions,
-          afterTransactions,
-          setupMint ?? setupTxn
-        );
-        const mintTxId = mintOne[0];
-
-        let status: any = { err: true };
-        if (mintTxId) {
-          status = await awaitTransactionSignatureConfirmation(
-            mintTxId,
-            props.txTimeout,
-            props.connection,
-            true
-          );
-        }
-
-        if (status && !status.err) {
-          // manual update since the refresh might not detect
-          // the change immediately
-          let remaining = itemsRemaining! - 1;
-          setItemsRemaining(remaining);
-          setIsActive((candyMachine.state.isActive = remaining > 0));
-          candyMachine.state.isSoldOut = remaining === 0;
-          setSetupTxn(undefined);
-          console.log('dsssssssss',candyMachine.state)
-          setOpen(true);
-        //   setAlertState({
-        //     open: true,
-        //     message: "Congratulations! Mint succeeded!",
-        //     severity: "success",
-        //   });
-        } else {
-          setAlertState({
-            open: true,
-            message: "Mint failed! Please try again!",
-            severity: "error",
-          });
-        }
+  
+        setAlertState({
+          open: true,
+          message,
+          severity: "error",
+        });
+        // updates the candy machine state to reflect the latest
+        // information on chain
+        refreshCandyMachineState();
+      } finally {
+        setIsUserMinting(false);
       }
-    } catch (error: any) {
-      let message = error.msg || "Minting failed! Please try again!";
-      if (!error.msg) {
-        if (!error.message) {
-          message = "Transaction timeout! Please try again.";
-        } else if (error.message.indexOf("0x137")) {
-          console.log(error);
-          message = `SOLD OUT!`;
-        } else if (error.message.indexOf("0x135")) {
-          message = `Insufficient funds to mint. Please fund your wallet.`;
-        }
-      } else {
-        if (error.code === 311) {
-          console.log(error);
-          message = `SOLD OUT!`;
-          window.location.reload();
-        } else if (error.code === 312) {
-          message = `Minting period hasn't started yet.`;
-        }
-      }
-
-      setAlertState({
-        open: true,
-        message,
-        severity: "error",
-      });
-      // updates the candy machine state to reflect the latest
-      // information on chain
-      refreshCandyMachineState();
-    } finally {
-      setIsUserMinting(false);
     }
   };
 
@@ -489,8 +495,8 @@ const Home = (props: HomeProps) => {
                         type="number"
                         // disabled={isMinting}
                         className="mint-amount-input"
-                        value={1}
-                        // onChange={(e) => setMintCount((e.target as any).value)}
+                        value={mintCount}
+                        onChange={(e) => setMintCount((e.target as any).value)}
                       />
                       <Container>
                         <Container
