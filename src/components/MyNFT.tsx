@@ -12,7 +12,6 @@ const MyNFT = () => {
         <div id="myNft" className="container text-center">
             <div className="row">
                 <div className="col-lg-12 col-sm-12 col-xs-12 mb-5">
-                <h2></h2>
                     <div className="row">
                         {isLoading ? (
                             <>

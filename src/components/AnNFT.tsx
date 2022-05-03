@@ -1,9 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 export default function AnNFT({ nft }: any) {
-  // useEffect(() => {
-  //   console.log(nft);
-  // }, []);
   return (
     <div className="col-lg-12 col-sm-12 col-xs-12">
       <div className="row mynft__collention">

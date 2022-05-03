@@ -134,6 +134,8 @@ const Home = (props: HomeProps) => {
 
   const [open, setOpen] = React.useState(false);
 
+  const txs: any[] = [];
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -287,7 +289,6 @@ const Home = (props: HomeProps) => {
     beforeTransactions: Transaction[] = [],
     afterTransactions: Transaction[] = []
   ) => {
-    const txs: any[] = [];
     for (let i = 0; i < mintCount; i++) {
       try {
         setIsUserMinting(true);
@@ -765,16 +766,23 @@ const Home = (props: HomeProps) => {
                   width="350"
                   height="350"
                 />
-                <div>
-                  <a
-                    className="custom_a"
-                    href="https://solscan.io/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    see your tx on explorer
-                  </a>
-                </div>
+
+                <h2>see your tx on explorer</h2>
+                {(txs as any).map((tx: any, i: number) => {
+                  return (
+                    <div>
+                      <a
+                        key={i}
+                        className="custom_a"
+                        href={"https://solscan.io/" + tx}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {tx}
+                      </a>
+                    </div>
+                  );
+                })}
               </DialogContent>
               <DialogActions>
                 <Button autoFocus onClick={handleClose}>
