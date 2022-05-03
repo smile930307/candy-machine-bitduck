@@ -29,7 +29,7 @@ const Faq = () => {
           </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 mb-5">
             <h3>
-              <b>Lorem ipsum dolor sit amet</b>
+              Lorem ipsum dolor sit amet
             </h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac
@@ -38,9 +38,6 @@ const Faq = () => {
               Suspendisse potenti.
             </p>
           </div>
-        </div>
-        <div>
-          <img loading="lazy" width="100%" src={simple} alt="dev" />
         </div>
         <div className="row align-center mt-50">
           <div className="col-lg-6 col-sm-12 col-xs-12 text-center mobile-only mb-20">
@@ -57,7 +54,7 @@ const Faq = () => {
           </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 mb-5">
             <h3>
-              <b>Lorem ipsum dolor sit amet</b>
+              Lorem ipsum dolor sit amet
             </h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac
@@ -97,7 +94,7 @@ const Faq = () => {
           </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 mb-5">
             <h3>
-              <b>Lorem ipsum dolor sit amet</b>
+              Lorem ipsum dolor sit amet
             </h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac
@@ -106,9 +103,6 @@ const Faq = () => {
               Suspendisse potenti.
             </p>
           </div>
-        </div>
-        <div>
-          <img loading="lazy" width="100%" src={simple} alt="dev" />
         </div>
         <div className="row align-center mt-50">
           <div className="col-lg-6 col-sm-12 col-xs-12 text-center mobile-only mb-20">
@@ -125,7 +119,7 @@ const Faq = () => {
           </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 mb-5">
             <h3>
-              <b>Lorem ipsum dolor sit amet</b>
+              Lorem ipsum dolor sit amet
             </h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac

@@ -8,7 +8,7 @@ import {
 } from "react-bootstrap";
 import { BsTwitter, BsDiscord } from "react-icons/bs";
 import { Link } from "react-router-dom"
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/LogoBitDuckz.png";
 import { useState } from "react";
 
 
@@ -69,7 +69,7 @@ const Header = () => {
                   <Button
                     role="button"
                     aria-expanded="false">
-                    MyNFT
+                    My NFTS
                   </Button>
                 </Link>
               </Nav.Item>
