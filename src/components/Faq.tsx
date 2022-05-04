@@ -28,7 +28,7 @@ const Faq = () => {
             </div>
           </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 mb-5">
-            <h3>
+            <h3 className="color-yellow">
               Lorem ipsum dolor sit amet
             </h3>
             <p>
@@ -53,7 +53,7 @@ const Faq = () => {
             </div>
           </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 mb-5">
-            <h3>
+            <h3 className="color-yellow">
               Lorem ipsum dolor sit amet
             </h3>
             <p>
@@ -93,7 +93,7 @@ const Faq = () => {
             </div>
           </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 mb-5">
-            <h3>
+            <h3 className="color-yellow">
               Lorem ipsum dolor sit amet
             </h3>
             <p>
@@ -118,7 +118,7 @@ const Faq = () => {
             </div>
           </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 mb-5">
-            <h3>
+            <h3 className="color-yellow">
               Lorem ipsum dolor sit amet
             </h3>
             <p>
